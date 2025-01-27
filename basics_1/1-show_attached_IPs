@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# Show all ipv4 currently use
-ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2
+# This script displays all active IPv4 IPs on the machine
+
+ifconfig | grep 'inet ' | awk '{print $2}'
