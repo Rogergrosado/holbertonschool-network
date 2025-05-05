@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # Script that pings an IP address passed as an argument
-arg_ip="$1"
-if [ "$#" -eq 0 ]
-then
-	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+
+# Check if the argument is provided
+if [ "$#" -eq 0 ]; then
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 else
-	ping "$arg_ip" -c5
+    # If the argument is provided, ping the IP address 5 times
+    ping "$1" -c 5
 fi
+
